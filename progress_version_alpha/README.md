@@ -1,16 +1,21 @@
-# progress_version_alpha
+# Travail réalisé :
 
-A new Flutter project.
+## Mercredi 5 Juin
 
-## Getting Started
+### Début de l'interface graphique du FEED :
+Page d'accueil avec les boutons non cliquables.
 
-This project is a starting point for a Flutter application.
+#### Explications : 
+Le filtre et les réglages pourront se faire mais pour les versions futures.
+Les boutons de feed, liste et ajouter ne sont pas les plus beaux, surtout concernant leur taille donc à changer.
 
-A few resources to get you started if this is your first Flutter project:
+### Création d'un template de carte :
+Card + Espace de 10 a chaque nouvel appel d'une card
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+#### Explications :
+Je crée pour le moment une carte complète mais il faut rajouter des conditions si l'utilisateur ne met pas de photos ou de commentaires.
+J'ai fixé dans le raw la largeur possible du titre et du commentaire PRINCIPAL -> Il faudra aussi fixer une taille max pour le commentaire sinon on a la possibilité d'avoir une taille de carte beaucoup trop grande.
+Pour le commentaire SECONDAIRE, pareil.
+La taille de la photo représente une taille fixe -> À changer aussi pour que cela dépende de la taille de la carte ou autre.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Jeudi 6 Juin
