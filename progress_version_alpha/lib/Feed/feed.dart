@@ -1,9 +1,17 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 
+// Structure
 import '../Structure/myAppBar.dart';
 import '../Structure/myBottomNavigationBar.dart';
 import '../Structure/myFloatingActionButton.dart';
+
+// Card
 import 'myCardContents.dart';
+
+// JSON data
+import 'dataTest/jsonString.dart';
 
 class MyFeed extends StatelessWidget {
   const MyFeed({super.key});
@@ -38,10 +46,14 @@ class MyFeedView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Decode the JSON
+    List<dynamic> jsonArray = jsonDecode(jsonString);
+
     return ListView.builder(
-      itemCount: 5, // Number of items in the list
+      itemCount: jsonArray.length, // Number of items in the list
       itemBuilder: (BuildContext context, int index) {
-        return MyCompletedHabit(key: UniqueKey());
+        // Pass each JSON object to MyCompletedHabit
+        return MyCompletedHabit(key: UniqueKey(), jsonObject: jsonArray[index]);
       },
     );
   }
@@ -49,23 +61,18 @@ class MyFeedView extends StatelessWidget {
 
 // Custom widget for the card + a little space between the cards
 class MyCompletedHabit extends StatelessWidget {
-  const MyCompletedHabit({super.key});
+
+  final dynamic jsonObject;
+
+  const MyCompletedHabit({super.key, required this.jsonObject});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         // Container de la card
-        Container(
-          width: MediaQuery.of(context).size.width * 0.97, // Width set to 90% of the screen width
-          // Height: on ne le défini pas car il s'adapte a la taille du contenu
-          decoration: BoxDecoration(
-            color: Colors.red, // Background color of the container
-            borderRadius: BorderRadius.circular(10.0), // Border radius of the container
-          ),
-          child: const MyCardContents(), // Custom widget for the card
-        ),
-        const SizedBox(height: 10.0), // To give space between the containers
+        MyCardContents(jsonObject: jsonObject), // Custom widget for the content of the card
+        const SizedBox(height: 40.0), // To give space between the containers
       ],
     );
   }
