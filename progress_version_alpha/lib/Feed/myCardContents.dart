@@ -1,4 +1,6 @@
 // Custom widget for the content of the card
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 
 // Services pour la couleur
@@ -81,10 +83,10 @@ class MyCardContents extends StatelessWidget {
                 
                             // Date de la publication
                             const SizedBox(height: 5.0), // To give space between the container and the text
-                            const SizedBox(
+                            SizedBox(
                               child: Text(
-                                'Date', // Text to be displayed
-                                style: TextStyle(
+                                jsonObject['date'], // Text to be displayed
+                                style: const TextStyle(
                                   fontSize: 15.0, // Font size of the text
                                   color: Colors.white, // Color of the text
                                 ),
@@ -99,10 +101,10 @@ class MyCardContents extends StatelessWidget {
                     const SizedBox(height: 10.0), // To give space between the container and the text
                     
                     // Habit Name
-                    const SizedBox(
+                    SizedBox(
                       child: Text(
-                        'Habit Name', // Text to be displayed
-                        style: TextStyle(
+                        jsonObject['habit'], // Text to be displayed
+                        style: const TextStyle(
                           fontSize: 22.0, // Font size of the text
                           fontWeight: FontWeight.bold, // Font weight of the text
                         ),
@@ -110,11 +112,14 @@ class MyCardContents extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 5.0), // To give space between the container and the text
-                    const SizedBox( // Pour limiter la largeur du texte
+                    
+                    
+                    // Description principal
+                    SizedBox( // Pour limiter la largeur du texte
                       width: 150.0, // Width of the container
                       child: Text(  // !!! Il faudra fixer la taille limite du texte
-                        'Habit Description pojpojpojpoze poinzeo', // Text to be displayed
-                        style: TextStyle(
+                        jsonObject['description'], // Text to be displayed
+                        style: const TextStyle(
                           fontSize: 17.0, // Font size of the text
                           color: Colors.white, // Color of the text
                         ),
@@ -125,6 +130,8 @@ class MyCardContents extends StatelessWidget {
                 ),
               ),
               const Spacer(), // Pour pousser mon container a droite
+
+              // Image de l'habitude
               Container(
                 width: 180.0, // Width of the container
                 height: 170.0, // Height of the container
@@ -137,11 +144,14 @@ class MyCardContents extends StatelessWidget {
             ],  
           ),
           const SizedBox(height: 15.0), // To give space between the container and the text
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15.0),
+
+          // Commentaire = Descritpiton secondaire
+          // Si commentaire est vide, on ne l'affiche pas et on suppress l'espace
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
             child: Text(
-              'Habit Description oijrfdorizejnf zopiejfoizejopijoij opijoijoi oijoij oijoij oijioj ii j i j j ij ij ij oiflk ofliejfpozedf eloifjmpezojfl dcolijedpofj,dz lzoejfmozj', // Text to be displayed
-              style: TextStyle(
+              jsonObject['comment'], // Text to be displayed
+              style: const TextStyle(
                 fontSize: 15.0, // Font size of the text
                 color: Colors.black, // Color of the text
               ),
