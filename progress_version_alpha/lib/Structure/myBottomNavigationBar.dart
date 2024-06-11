@@ -1,6 +1,8 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:progress_version_alpha/Feed/feed.dart';
+import 'package:progress_version_alpha/User/UserHabit/userHabit.dart';
 
 class MyBottomNavigationBar extends StatelessWidget {
 
@@ -35,10 +37,18 @@ class MyBottomNavigationBar extends StatelessWidget {
           onTap: (index) {
         switch (index) {
           case 0:
-            Navigator.pushReplacementNamed(context, '/feed');
+            // * Si on est déjà sur la page feed, on ne fait rien
+            // * Sinon on navigue vers la page feed
+            state == 'Feed' ? null :
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const MyFeed()));
             break;
           case 1:
-            Navigator.pushReplacementNamed(context, '/userHabit');
+            // * Si on est déjà sur la page userHabit, on ne fait rien
+            // * Sinon on navigue vers la page userHabit
+            state == 'UserHabit' ? null :
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const MyUserHabit()));
             break;
         }
       },

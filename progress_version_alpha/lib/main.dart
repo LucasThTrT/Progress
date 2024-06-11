@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         '/feed': (context) => const MyFeed(),
-        '/userHabit': (context) => const MyFeed(), // TODO : Change this to the right page
+        // '/userHabit': (context) => const MyFeed(), // TODO : Change this to the right page
       },
     );
   }

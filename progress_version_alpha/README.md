@@ -45,9 +45,25 @@ Et commentaire principal/secondaire et la photo que nous pouvons mettre ou nous.
 Les tests sur un JSONARRAY fonctionne bien à continuer..
 
 
+## Mardi 11 Juin
 
+### Fin affichage Json
+J'ai Fini l'affichage des Json mais il faudra limiter la taille de certain champs (en nombre de lettre par exemple ou reformer la card)
+
+### BottomNavigationBar
+Les icones ont un affichage en fonction du context. Je l'ai fait lors de la création d'une activité en envoyant le nom de mon activité comme variable de vérification.
+
+Rediréction vers une activité uniquement si nous ne sommes pas déjà dans celle-ci (voit le case en bas de myBottomNavigationBar)
+
+#### A FAIRE
+L'interface de visualisation des ses habits
+L'interface utilisateur pour la création des cards
+Création de la Firebase
+Faire les méthodes Post et Get pour la communication entre les utilisateurs.
 
 
 
 # Problèmes futurs
-Comment prendre les photos : par url ou autre ??
+- Il faut fixer une limite de lettre pour le titre du habit, UserName, Description 1 car ce sont des containers de taille fixe pour le moment par volonté de design
+
+- Comment prendre les photos : par url ou autre ??
