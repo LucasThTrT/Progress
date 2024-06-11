@@ -32,9 +32,9 @@ class MyFeedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: MyAppBar(), // Bar du haut
+      appBar: MyAppBar("Mon Feed"), // Bar du haut
       body: MyFeedView(),     // Corps de la page
-      bottomNavigationBar: MyBottomNavigationBar(), // Bar du bas
+      bottomNavigationBar: MyBottomNavigationBar("Feed"), // Bar du bas
       floatingActionButton: MyFloatingActionButton(), // Bouton flottant
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, // Position du bouton flottant
     ); // Custom AppBar
@@ -70,9 +70,9 @@ class MyCompletedHabit extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const SizedBox(height: 40.0), // To give space between the containers
         // Container de la card
         MyCardContents(jsonObject: jsonObject), // Custom widget for the content of the card
-        const SizedBox(height: 40.0), // To give space between the containers
       ],
     );
   }

@@ -1,7 +1,12 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const MyAppBar({super.key});
+
+  final String title;
+
+  const MyAppBar(this.title, {super.key});
 
   // PreferredSizeWidget is used to set the height of the AppBar
   @override
@@ -11,7 +16,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       title: 
-        const Text('Progress_v_alpha'), // Title of the AppBar
+        Text(title), // Title of the AppBar
       centerTitle: true, // To center the title
       backgroundColor: Colors.white10, // Background color of the AppBar
 

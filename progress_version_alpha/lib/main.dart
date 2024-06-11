@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         '/feed': (context) => const MyFeed(),
+        '/userHabit': (context) => const MyFeed(), // TODO : Change this to the right page
       },
     );
   }
@@ -40,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
   _navigateToFeed() async {
     await Future.delayed(const Duration(seconds: 3), () {}); // Wait for 3 seconds
     // ignore: use_build_context_synchronously
-    Navigator.pushReplacementNamed(context, '/feed'); // Navigate to FeedScreen
+    Navigator.pushNamed(context, '/feed'); // Navigate to FeedScreen
   }
 
   @override
