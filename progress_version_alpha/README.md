@@ -62,6 +62,16 @@ Création de la Firebase
 Faire les méthodes Post et Get pour la communication entre les utilisateurs.
 
 
+## Mercredi 12 Juin
+
+### Interface Utilisateur 
+J'ai repris la structure de Card pour rapidement faire l'affichage.
+On gardera seulement le nom de l'habitude et la description rapide.
+
+#### A FAIRE
+Il faut modifier la card utilisateur pour avoir un bouton "valider habitude" et si habitudes validés, On peut ajouter 1 Image et 1 Commentare.
+
+On supprime la photo de profil et le nom utilisateur qui ne sert a rien
 
 # Problèmes futurs
 - Il faut fixer une limite de lettre pour le titre du habit, UserName, Description 1 car ce sont des containers de taille fixe pour le moment par volonté de design
